@@ -1,5 +1,7 @@
 FROM python:3.12-slim
 
+# FROM openvino/ubuntu20_data_dev:latest
+
 WORKDIR /app
 
 COPY . /app
@@ -10,7 +12,7 @@ EXPOSE 8000
 
 ENV PYTHONUNBUFFERED=1
 
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]
 
 # # Base image from NVIDIA
 # FROM nvcr.io/nvidia/pytorch:22.12-py3
